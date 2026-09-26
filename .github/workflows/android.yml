@@ -25,7 +25,9 @@ jobs:
             libncursesw5-dev libtinfo5 \
             cmake libffi-dev libssl-dev \
             build-essential
-
+      - name: Accept Android SDK licenses
+        run: |
+          yes | sdkmanager --licenses || true
       - name: Install Buildozer
         run: |
           python3 -m pip install --user --upgrade pip
